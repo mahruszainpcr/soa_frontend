@@ -8,16 +8,20 @@ import { AppComponent } from './app.component';
 import { PiemahasiswaComponent } from './piemahasiswa/piemahasiswa.component';
 import { PiekelasComponent } from './piekelas/piekelas.component';
 
+import { DataTablesModule } from 'angular-datatables';
+import { BarmatakuliahComponent } from './barmatakuliah/barmatakuliah.component';
 @NgModule({
   declarations: [
     AppComponent,
     PiemahasiswaComponent,
-    PiekelasComponent
+    PiekelasComponent,
+    BarmatakuliahComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
