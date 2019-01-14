@@ -23,12 +23,19 @@ let chart = am4core.create("barmakul", am4charts.XYChart);
 
 // Add percent sign to all numbers
 // chart.numberFormatter.numberFormat = "#.3'%'";
-this.http.get('http://localhost:3001/matakuliah')
+this.http.get('http://13.250.52.74:5000/matakuliah')
     .subscribe(data=>{
-      //console.log(data);
-      chart.data =data['values'];
+      console.log(data);
+      console.log("iniiii");
+      chart.data =data['storedata'];
       //this.displaydata(data);
     })
+// this.http.get('http://localhost:3001/matakuliah')
+//     .subscribe(data=>{
+//       //console.log(data);
+//       chart.data =data['values'];
+//       //this.displaydata(data);
+//     })
 // Add data
 
 

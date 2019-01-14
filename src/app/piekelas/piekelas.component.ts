@@ -22,11 +22,17 @@ export class PiekelasComponent implements OnInit {
 
 // Create chart instance
 let chart = am4core.create("piekelas", am4charts.PieChart);
-this.http.get('http://localhost:3002/kelas')
-.subscribe(data=>{
-  chart.data =data['values'];
-  // this.displaydata(data['values']);
-});
+// this.http.get('http://localhost:3002/kelas')
+// .subscribe(data=>{
+//   chart.data =data['values'];
+//   // this.displaydata(data['values']);
+// });
+this.http.get('http://54.169.249.63/kelas')
+    .subscribe(data=>{
+      console.log(data);
+      chart.data =data['values'];
+      //this.displaydata(data);
+    })
 
 // Add and configure Series
 let pieSeries = chart.series.push(new am4charts.PieSeries());

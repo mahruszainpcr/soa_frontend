@@ -13,19 +13,37 @@ export class AppComponent {
   httpDataMatakuliah;
   httpDataKelas;
   ngOnInit(){
-    this.http.get('http://localhost:3000/users')
+    // this.http.get('http://localhost:3000/users')
+    // .subscribe(data=>{
+    //   console.log(data);
+    //   this.httpDataPenguna=data['values'];
+    //   // this.displaydata(data['values']);
+    // })
+    // this.http.get('http://localhost:3001/matakuliah')
+    // .subscribe(data=>{
+    //   console.log(data);
+    //   this.httpDataMatakuliah=data['values'];
+    //   //this.displaydata(data);
+    // })
+    // this.http.get('http://localhost:3002/kelas')
+    // .subscribe(data=>{
+    //   console.log(data);
+    //   this.httpDataKelas=data['values'];
+    //   //this.displaydata(data);
+    // })
+    this.http.get('http://13.229.213.154:3000/users')
     .subscribe(data=>{
       console.log(data);
       this.httpDataPenguna=data['values'];
       // this.displaydata(data['values']);
     })
-    this.http.get('http://localhost:3001/matakuliah')
+    this.http.get('http://13.250.52.74:5000/matakuliah')
     .subscribe(data=>{
       console.log(data);
-      this.httpDataMatakuliah=data['values'];
+      this.httpDataMatakuliah=data['storedata'];
       //this.displaydata(data);
     })
-    this.http.get('http://localhost:3002/kelas')
+    this.http.get('http://54.169.249.63/kelas')
     .subscribe(data=>{
       console.log(data);
       this.httpDataKelas=data['values'];

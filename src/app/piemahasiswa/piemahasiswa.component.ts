@@ -30,14 +30,20 @@ let chart = am4core.create("chartdiv", am4charts.PieChart);
 //   country: "Sistem Informasi",
 //   litres: 301.9
 // }];
-this.http.get('http://localhost:3000/vis')
-.subscribe(data=>{
-  console.log("iniiiiii.......");
-  console.log(data);
-  this.dataVis=data['values'];
-  chart.data =data['values'];
-  // this.displaydata(data['values']);
-})
+this.http.get('http://13.229.213.154:3000/vis')
+    .subscribe(data=>{
+      console.log(data);
+      chart.data =data['values'];
+      // this.displaydata(data['values']);
+    })
+// this.http.get('http://localhost:3000/vis')
+// .subscribe(data=>{
+//   console.log("iniiiiii.......");
+//   console.log(data);
+//   this.dataVis=data['values'];
+//   chart.data =data['values'];
+//   // this.displaydata(data['values']);
+// })
 // Add and configure Series
 let pieSeries = chart.series.push(new am4charts.PieSeries());
 pieSeries.dataFields.value = "jumlah_mahasiswa";
